@@ -19,6 +19,10 @@
   --green-soft: rgba(74, 222, 128, 0.12);
   --amber: #fbbf24;
   --amber-soft: rgba(251, 191, 36, 0.12);
+  --red: #f87171;
+  --red-soft: rgba(248, 113, 113, 0.12);
+  --purple: #a78bfa;
+  --purple-soft: rgba(167, 139, 250, 0.12);
   --radius: 12px;
   --radius-sm: 8px;
   --container: 820px;
@@ -91,6 +95,65 @@ body {
 
 a.contact-item:hover {
   color: var(--accent);
+}
+
+/* LinkedIn highlight */
+.linkedin-link {
+  color: #0a66c2;
+  font-weight: 600;
+  background: rgba(10, 102, 194, 0.1);
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(10, 102, 194, 0.25);
+  transition: background 0.2s, color 0.2s;
+}
+
+.linkedin-link:hover {
+  background: rgba(10, 102, 194, 0.2);
+  color: #3b9eff !important;
+}
+
+/* ===== Banner Navigation ===== */
+.banner-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.banner-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.banner-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.banner-link {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.banner-link:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 /* ===== Sections ===== */
@@ -381,6 +444,161 @@ a.contact-item:hover {
   color: var(--accent);
 }
 
+/* ===== Music Section ===== */
+.music-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.music-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.music-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.spotify-btn {
+  background: #1db954;
+  color: #fff;
+}
+
+.linktree-btn {
+  background: #43e660;
+  color: #000;
+}
+
+.chess-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.chess-link-wrap {
+  margin-top: 16px;
+}
+
+/* ===== Geometry Dash Section ===== */
+.gd-stats {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.gd-hardest,
+.gd-others {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gd-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.gd-level-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gd-level {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 100px;
+}
+
+.gd-demon {
+  background: var(--red-soft);
+  color: var(--red);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.gd-other {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(108, 140, 255, 0.25);
+}
+
+/* ===== Gym Section ===== */
+.gym-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gym-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gym-value {
+  font-family: var(--mono);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.gym-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* ===== Dictationary Section ===== */
+.nickname-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.nickname-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nickname-card:hover {
+  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.08);
+}
+
+.nickname-word {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+.nickname-def {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
 /* ===== Footer ===== */
 .footer {
   margin-top: 56px;
@@ -409,6 +627,14 @@ a.contact-item:hover {
     gap: 10px;
   }
 
+  .linkedin-link {
+    align-self: flex-start;
+  }
+
+  .banner-scroll {
+    justify-content: flex-start;
+  }
+
   .card-header {
     flex-direction: column;
     gap: 8px;
@@ -416,8 +642,28 @@ a.contact-item:hover {
 
   .qualifications-grid,
   .highlights,
-  .skills-grid {
+  .skills-grid,
+  .nickname-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gd-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .gym-stat {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .music-links {
+    flex-direction: column;
+  }
+
+  .music-btn {
+    justify-content: center;
   }
 }
 
@@ -444,3 +690,8 @@ a.contact-item:hover {
 #education { animation-delay: 0.1s; }
 #experience { animation-delay: 0.2s; }
 #skills { animation-delay: 0.3s; }
+#music { animation-delay: 0.4s; }
+#chess { animation-delay: 0.5s; }
+#geometry-dash { animation-delay: 0.6s; }
+#gym { animation-delay: 0.7s; }
+#dictationary { animation-delay: 0.8s; }
